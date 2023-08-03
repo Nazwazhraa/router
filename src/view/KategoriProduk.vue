@@ -1,12 +1,15 @@
 <template>
+  <center>
   <h1>Daftar Produk {{ NamaKategori }}</h1>
-  <div class="container">
+  <div class="flex-container">
       <div v-for="produk in data" :key="produk.id" class="card">
+        <img :src="getImgSrc(produk.img)" alt="Category Image">
       <router-link class="container" :to="{ name : 'Detail', params:{id_produk : produk.id}}">
           <h4>{{produk.nama }}</h4>
       </router-link>
   </div>
   </div>
+</center>
 </template>
 <script>
 import { computed } from 'vue'
@@ -27,16 +30,20 @@ export default {
           return detail.id == a.id_kategori
           
       });
-      
+
       const NamaKategori = computed(() => {
         const foundKategori = kategori.kategori.find((kat) => kat.id == props.id_kategori)
         return foundKategori ? foundKategori.nama : ''
       })
+
+      const getImgSrc = (imgFileName) => {
+        return '../src/assets/img/' + imgFileName + '' ;
+      }
       return{
           detail,
           data ,
-          NamaKategori
-          
+          NamaKategori,
+          getImgSrc
 
       }
   }
@@ -46,8 +53,6 @@ export default {
 <style scoped>
 .flex-container {
   display: flex;
-  text-align: center;
-
 }
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0, 0, 0.2);
@@ -61,6 +66,9 @@ export default {
 }
 .container {
   padding: 2px 16px;
-  text-align: center;
+}
+
+img{
+  height: 250px;
 }
 </style>

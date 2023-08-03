@@ -7,18 +7,18 @@ export const kategori = {
     },
     {
       'id': 2,
-      'nama': 'Otomotif',
-      'img' : 'otomotif.jpg'
+      'nama': 'Skincare',
+      'img' : 'skincare.jpg'
     },
     {
       'id': 3,
-      'nama': 'Olahraga',
-      'img' : 'olahraga.jpg'
+      'nama': 'Buku',
+      'img' : 'buku.jpg'
     },
     {
       'id': 4,
-      'nama': 'Alat Masak',
-      'img' : 'almas.jpg'
+      'nama': 'Perlengkapan Dapur',
+      'img' : 'per1.jpg'
     },
     {
       'id': 5,

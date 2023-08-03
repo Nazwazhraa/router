@@ -66,7 +66,6 @@ export default {
 
 .container {
   padding: 2px 16px;
-  text-align: center;
 }
 img{
  height: 250px;
